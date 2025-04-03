@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Bread",
+    "calories": 15,
+    "fat": 2,
+    "sodium": 11,
+    "potassium": 55,
+    "carbs": {
+      "total": 15,
+      "fiber": 34,
+      "sugar": 24
+    },
+    "protein": 11
+  },
+  {
+    "name": "Ants",
+    "calories": 15,
+    "fat": 2,
+    "sodium": 11,
+    "potassium": 55,
+    "carbs": {
+      "total": 15,
+      "fiber": 34,
+      "sugar": 24
+    },
+    "protein": 11
+  },
+  {
+    "name": "Wombat",
+    "calories": 15,
+    "fat": 2,
+    "sodium": 11,
+    "potassium": 55,
+    "carbs": {
+      "total": 15,
+      "fiber": 34,
+      "sugar": 24
+    },
+    "protein": 11
+  },
+  {
+    "name": "Beef",
+    "calories": 34,
+    "fat": 2,
+    "sodium": 5,
+    "potassium": 55,
+    "carbs": {
+      "total": 15,
+      "fiber": 34,
+      "sugar": 24
+    },
+    "protein": 11
+  }
+]
