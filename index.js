@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGO).catch((error) => console.log);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json);
+app.use(express.json());
 
 const findRoutes = require("./helpers/findRoutes");
 const mountRoute = require("./helpers/mountRoute");

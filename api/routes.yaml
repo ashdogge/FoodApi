@@ -1,4 +1,4 @@
 routes:
-  - name: "Test"
-    prefix: "test"
-    path: "./test"
+  - NAME: "Foods"
+    prefix: "foods"
+    path: "./foods"
