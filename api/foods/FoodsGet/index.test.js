@@ -6,7 +6,7 @@ const makeMockRes = require("../../../helpers/makeMockRes");
 const mockingoose = require("mockingoose");
 const FoodsModel = require("../models/food");
 
-test("FoodsModel returns 404 if no foods are found", async () => {
+test("FoodsGet returns 404 if no foods are found", async () => {
   mockingoose(FoodsModel).toReturn(null, "find");
 
   let req = {
@@ -20,7 +20,7 @@ test("FoodsModel returns 404 if no foods are found", async () => {
 
   expect(body).toEqual({ error: "No foods found in database" });
 });
-test("FoodsModel returns array of foods with status code 200", async () => {
+test("FoodsGet returns array of foods with status code 200", async () => {
   const foodsDocument = getJSON("../api/foods/_test/foods.json");
 
   mockingoose(FoodsModel).toReturn(foodsDocument, "find");
