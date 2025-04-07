@@ -7,11 +7,11 @@ module.exports = makeInjectable(
     },
   },
   async function ({ FoodsModel }, req, res) {
-    if (!req.body.id) {
+    if (!req.params.id) {
       return res.status(404).json({ error: "ID field is missing" });
     }
 
-    let status = await FoodsModel.findByIdAndDelete({ _id: req.body.id });
+    let status = await FoodsModel.findByIdAndDelete({ _id: req.params.id });
     if (!status) {
       return res.status(409).json({ error: "Error deleting food" });
     }

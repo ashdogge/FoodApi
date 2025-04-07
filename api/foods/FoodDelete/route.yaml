@@ -1,2 +1,2 @@
 method: "delete"
-route: "/delete"
+route: "/delete/:id"
