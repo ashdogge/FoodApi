@@ -7,15 +7,13 @@ module.exports = makeInjectable(
     },
   },
   async function ({ FoodsModel }, req, res) {
-    if (!req.body.id) {
+    if (!req.params.id) {
       return res.status(404).json({ error: "No ID found" });
     }
 
-    let id = req.body.id;
-
+    let id = req.params.id;
 
     let food = await FoodsModel.findOne({ _id: id });
-
 
     if (!food) {
       return res.status(404).json({ error: "No Food found with provided ID" });

@@ -1,2 +1,2 @@
 method: "get"
-route: "/food"
+route: "/food/:id"

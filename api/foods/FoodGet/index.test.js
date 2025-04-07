@@ -6,12 +6,12 @@ const makeMockRes = require("../../../helpers/makeMockRes");
 const mockingoose = require("mockingoose");
 const FoodsModel = require("../models/food");
 
-test("FoodGet returns 404 if id not found in body", async () => {
+test("FoodGet returns 404 if id not found in params", async () => {
   mockingoose(FoodsModel).toReturn(null, "find");
 
   let req = {
     header: {},
-    body: {},
+    params: {},
   };
   let res = makeMockRes();
   await func.inject({ FoodsModel })(req, res);
@@ -26,7 +26,7 @@ test("FoodGet returns 404 if food is not found by ID", async () => {
 
   let req = {
     header: {},
-    body: { id: "67ee094061abb538057cf23f" },
+    params: { id: "67ee094061abb538057cf23f" },
   };
   let res = makeMockRes();
   await func.inject({ FoodsModel })(req, res);
@@ -54,7 +54,7 @@ test("FoodGet returns 200 if food is found by ID", async () => {
 
   let req = {
     header: {},
-    body: { id: "67ee094061abb538057cf23f" },
+    params: { id: "67ee094061abb538057cf23f" },
   };
   let res = makeMockRes();
   mockingoose(FoodsModel).toReturn(foundfood, "findOne");
