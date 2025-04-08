@@ -2,3 +2,6 @@ routes:
   - NAME: "Foods"
     prefix: "foods"
     path: "./foods"
+  - NAME: "FoodEntries"
+    prefix: "entries"
+    path: "./foodEntry"
