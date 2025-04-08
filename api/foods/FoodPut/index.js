@@ -8,22 +8,41 @@ module.exports = makeInjectable(
   },
   async function ({ FoodsModel }, req, res) {
     // Check that required parameters were passed. Can expand error-checking later if needed, also check on frontend
-    if (
-      !req.body.id ||
-      !req.body.name ||
-      !req.body.calories ||
-      !req.body.sodium ||
-      !req.body.potassium ||
-      !req.body.carbs ||
-      !req.body.carbs.total ||
-      !req.body.carbs.fiber ||
-      !req.body.carbs.sugar ||
-      !req.body.protein
-    ) {
-      return res.status(404).json({ error: "One or more fields are missing" });
+
+    if (!req.body.id) {
+      return res.status(404).json({ error: "id missing from request" });
     }
+    if (!req.body.name) {
+      return res.status(404).json({ error: "name missing from request" });
+    }
+    if (isNaN(req.body.fat)) {
+      return res.status(404).json({ error: "fat missing from request" });
+    }
+    if (isNaN(req.body.calories)) {
+      return res.status(404).json({ error: "calories missing from request" });
+    }
+    if (isNaN(req.body.sodium)) {
+      return res.status(404).json({ error: "sodium missing from request" });
+    }
+    if (isNaN(req.body.potassium)) {
+      return res.status(404).json({ error: "potassium missing from request" });
+    }
+    if (!req.body.carbs) {
+      return res.status(404).json({ error: "carbs missing from request" });
+    }
+    if (isNaN(req.body.carbs.fiber)) {
+      return res.status(404).json({ error: "fiber missing from request" });
+    }
+    if (isNaN(req.body.carbs.sugar)) {
+      return res.status(404).json({ error: "sugar missing from request" });
+    }
+    if (isNaN(req.body.protein)) {
+      return res.status(404).json({ error: "id missing from request" });
+    }
+
     let id = req.body.id;
     let nName = req.body.name.toUpperCase();
+    let nFat = parseFloat(req.body.fat);
     let nCalories = parseFloat(req.body.calories);
     let nSodium = parseFloat(req.body.sodium);
     let nPotassium = parseFloat(req.body.potassium);
@@ -41,6 +60,7 @@ module.exports = makeInjectable(
     //Update fields
 
     food.name = nName;
+    food.fat = nFat;
     food.calories = nCalories;
     food.sodium = nSodium;
     food.potassium = nPotassium;
