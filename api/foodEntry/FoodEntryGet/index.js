@@ -15,6 +15,6 @@ module.exports = makeInjectable(
         .status(404)
         .json({ error: "No food entries found in database" });
     }
-    return res.status(200).json(foods);
+    return res.status(200).json(foodEntries);
   }
 );
