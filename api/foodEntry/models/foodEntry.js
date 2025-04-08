@@ -4,7 +4,7 @@ const { Schema, Types } = require("mongoose");
 const FoodEntrySchema = new Schema({
   food: {
     type: Types.ObjectId,
-    ref: "Food",
+    ref: "Foods",
     required: true,
   },
   eatenAt: {
