@@ -9,9 +9,7 @@ module.exports = makeInjectable(
   async function ({ FoodsModel }, req, res) {
     // Check that required parameters were passed. Can expand error-checking later if needed,
     // also check on frontend
-    if (!req.body.id) {
-      return res.status(404).json({ error: "id missing from request" });
-    }
+
     if (!req.body.name) {
       return res.status(404).json({ error: "name missing from request" });
     }
